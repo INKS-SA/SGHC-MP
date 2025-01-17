@@ -1,0 +1,77 @@
+.recognition-game {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    background-image: url("/public/backgrounds/game.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100%;
+    width: 100%;
+    font-family: 'Satisfy', cursive;
+  }
+
+  .game-canva {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .game-header {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+
+  .statment {
+    height: 20vh;
+  }
+
+  .game {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.8);
+    border: 1px solid black;
+    border-radius: 5px;
+  }
+
+  .game-img-btn{
+    display: flex;
+    flex-direction: row;
+    align-items: end;
+  }
+
+  .btn-speech {
+    font-family: 'Satisfy', cursive;
+    margin: 1vh;
+    padding: 1vh 2vh;
+    color: #EAF2E3;
+    background-color: #FF637D;
+    border: none;
+    border-radius: 5px;
+    font-size: 3vh;
+    cursor: pointer;
+    height: fit-content;
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+  }
+  
+  .btn-speech span {
+    margin-top: 0.1vh;
+    font-size: 1.5vh;
+    font-weight: bold;
+  }
+  
+  .btn-speech:hover {
+    background-color: #66D7D1;
+    scale: 1.1;
+  }

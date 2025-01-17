@@ -1,0 +1,24 @@
+.game-stats {
+  width: fit-content;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  background: rgba(255, 255, 255, 0.8);
+  border: 2px solid black;
+  border-radius: 5px;
+  padding: 1vw;
+  margin: auto;
+}
+
+.stat {
+  text-align: center;
+}
+
+.stat-label{
+  color: black;
+  font-weight: bold;
+}
+
+.stat-lives, .stat-progress, .stat-badges {
+  font-size: 1.5rem;
+}

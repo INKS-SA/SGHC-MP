@@ -1,0 +1,47 @@
+.game-config{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    background-image: url("/src/assets/backgrounds/ciudad-silencio.png");
+    background-image: url("/public/backgrounds/game.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100%;
+    width: 100%;
+    font-family: 'Satisfy', cursive;
+}
+
+.config-content {
+    display: flex;
+    flex-direction: row;
+}
+
+.config-content img {
+    margin: 2vh auto;
+    width:65vh;
+}
+
+.difficulty-buttons{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+    .difficulty-buttons button {
+        font-size: 2.5vh;
+        padding: 1.5vh 2vw;
+        background-color: #FF637D;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-family: 'Satisfy', cursive;
+    }
+
+.difficulty-buttons button:hover {
+    background-color: #66D7D1;
+    scale: 1.1;
+}

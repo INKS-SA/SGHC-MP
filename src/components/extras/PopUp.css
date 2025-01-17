@@ -1,0 +1,129 @@
+/* PopUp.css */
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.popup-content {
+  border: 1px solid #000;
+  background: rgba(255, 255, 255, 0.9);
+  color: black;
+  padding: 20px;
+  border-radius: 10px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: fit-content; 
+}
+
+.popup-content p{
+  font-family: 'Century Gothic'; 
+  font-size: 6vh;
+  color: orange;
+  margin: 0;
+  -webkit-text-stroke: 1px black;
+}
+
+.popup-content span {
+  font-family: 'Century Gothic'; 
+  font-size: 4vh;
+  color: #333;
+  margin: 0;
+  
+}
+
+.buttons-exit {
+  display: flex;
+  justify-content: space-around;
+  width: 60%;
+  margin: 3vh;
+}
+
+.buttons-exit button{
+  font-size: 3vh;
+  padding: 10px 20px;
+  background-color: #8ba082;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: auto;
+  font-family: 'Century Gothic'; 
+}
+
+.buttons-exit button:hover {
+  background-color: #5d6c56;
+  scale: 1.1;
+}
+
+.popup-content img{
+  height: 60vh;
+  width: fit-content;
+}
+
+.close {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+}
+
+.close-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size:4vh;
+  color: #333;
+  padding: 5px;
+  outline: none;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: #f00;
+  }
+}
+
+.popup-img-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.popup-btns {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 20px;
+  gap: 1vh;
+}
+
+.popup-btns button{
+    font-size: 3vh;
+    padding: 10px 20px;
+    background-color: #8ba082;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: auto;
+    font-family: 'Century Gothic';
+}
+
+.popup-btns button:hover {
+    background-color: #5d6c56;
+}

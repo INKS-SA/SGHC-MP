@@ -1,0 +1,104 @@
+.login-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    background-color: #f5f1ef;
+    height: 100%;
+    font-family: 'Century Gothic';
+    padding: 0 1vh;
+}
+
+.login {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 70%;
+    width: 100%;
+    font-family: 'Century Gothic';
+}
+
+.login-title {
+    grid-row: 1;
+    grid-column: 1 / 3;
+}
+
+.login-title h1 {
+    font-family: 'Century Gothic';
+    font-size: 10vh;
+    color: #383434;
+    margin: 0;
+    
+}
+
+.login-form {
+    width: 70%;
+    height: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.login-heading {
+    font-size: 6vh;
+    color: #383434;
+    font-family: 'Century Gothic';
+    margin: 0.5vh auto;
+}
+
+.login-button {
+    color: #ffffff;
+    font-size: 2.25vh;
+    width: 50%;
+    margin: 2vh auto;
+    padding: 10px;
+    background-color: #8ba082;
+    font-family: 'Century Gothic'; 
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.login-button:hover {
+    background-color: #5d6c56;
+}
+
+.footer-login {
+    font-size: 2.25vh;
+    color: #333;
+}
+
+.login-link {
+    text-decoration: none;
+    color: #383434;
+    font-weight: bold;
+}
+
+.login-link:hover {
+    color: #f5f1ef;
+}
+
+.img-form {
+    justify-content: center;
+    align-items: center;
+}
+
+.img-form img {
+    width: 80%;
+    height: 100%;
+    object-fit: cover;
+    border: none;
+    margin: 5vh;
+}

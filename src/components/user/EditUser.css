@@ -1,0 +1,27 @@
+.edit-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    /*background-image: url("/backgrounds/main.png");*/
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100%;
+    font-family: 'Satisfy', cursive;
+}
+
+.edit-user-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 90%;
+    width: 100%;
+    font-family: 'Satisfy', cursive;
+}

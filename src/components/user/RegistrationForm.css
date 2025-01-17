@@ -1,0 +1,117 @@
+.registration-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    /*background-image: url("/backgrounds/main.png");*/
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100%;
+    font-family: 'Satisfy', cursive;
+}
+
+.registration {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 90%;
+    width: 100%;
+    font-family: 'Satisfy', cursive;
+}
+
+
+.registration-title h1 {
+    font-family: 'Satisfy', cursive;
+    font-size: 12vh;
+    color: yellow;
+    margin: 0;
+    -webkit-text-stroke: 2px black;
+}
+
+.registration-form {
+    width: 70%;
+    height: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    text-align: center;
+    justify-content: center;
+}
+
+.registration-form h3 {
+    font-size: 6vh;
+    color: #FF637D;
+    -webkit-text-stroke: 0.5px black;
+    margin: 0.5vh auto;
+    ;
+}
+
+.input-terms {
+    margin: 1vh auto;
+}
+
+.terms {
+    font-size: 1.75vh;
+    color: #333;
+}
+
+.password-field {
+    display: grid;
+    grid-template-columns: 1fr 10%;
+}
+.eye-icon {
+    margin: auto;
+    cursor: pointer;
+}
+
+.register-button {
+    font-size: 2.25vh;
+    width: 50%;
+    margin: 10px;
+    padding: 10px;
+    background-color: #FF637D;
+    font-family: 'Satisfy', cursive;
+    color: #EAF2E3;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.register-button:hover {
+    background-color: #66D7D1;
+}
+
+.footer-register {
+    font-size: 2.25vh;
+    color: #333;
+}
+
+.register-link {
+    text-decoration: none;
+    color: #FF637D;
+    font-weight: bold;
+}
+
+.register-link:hover {
+    color: #66D7D1;
+}
+
+.password {
+    font-size: 1.3vh; /* Tamaño de fuente */
+    color: #666; /* Color del texto */
+    margin-top: 5px; /* Espaciado superior */
+}
+
+.password span {
+    display: block; /* Hace que el span sea un bloque para ocupar el ancho completo */
+}

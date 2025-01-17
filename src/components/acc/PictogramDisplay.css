@@ -1,0 +1,335 @@
+.acc-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+  background-image: url("/public/backgrounds/acc.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100%;
+  width: 100%;
+  font-family: 'Satisfy', cursive;
+}
+
+.selected-images-and-buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
+  padding: 10px;
+  margin: auto;
+  width: 98%;
+  height: 20%;
+}
+
+.selected-images {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  overflow-x: auto;
+  height: 100%;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.5);
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.selected-images .card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  text-align: center;
+  padding: 10px 2px;
+  margin: 7px;
+  cursor: pointer;
+}
+
+.selected-images .card p {
+  margin: 5px 0 0 0;
+  color: #000;
+  font-size: 1.75vh;
+}
+
+.selected-images .card img {
+  width: 10vh;
+  height: 10vh;
+  background-color: white;
+}
+
+/*Btns para navegar*/
+.button-nav {
+  display: flex;
+  align-items: center;
+  margin: auto 20px;
+}
+
+.button-nav button {
+  font-family: 'Satisfy', cursive;
+  padding: 1.5vh;
+  margin: 1vh;
+  color: #EAF2E3;
+  background-color: #FF637D;
+  border: none;
+  border-radius: 5px;
+  font-size: 5vh;
+  cursor: pointer;
+  height: fit-content;
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+}
+
+.button-nav button span {
+  margin-top: 0.5vh;
+  font-size: 2vh;
+  font-weight: bold;
+}
+
+.button-nav button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.button-nav button:hover {
+  background-color: #66D7D1;
+}
+
+/*Btns para ACC*/
+.button-acc {
+  display: flex;
+  align-items: center;
+  margin: auto 20px;
+  background: rgba(255, 255, 255, 0.5);
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.button-acc button {
+  font-family: 'Satisfy', cursive;
+  padding: 1vh;
+  margin: 1vh;
+  color: #EAF2E3;
+  background-color: #66D7D1;
+  border: none;
+  border-radius: 5px;
+  font-size: 5vh;
+  cursor: pointer;
+  height: fit-content;
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+}
+
+.button-acc button span {
+  margin-top: 0.5vh;
+  font-size: 1.75vh;
+  font-weight: bold;
+}
+
+.button-acc button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.button-acc button:hover {
+  background-color: #FF637D;
+}
+
+.grid-acc {
+  display: grid;
+  grid-template-columns: 10% 20% 69%;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
+  padding: 5px;
+  margin: auto;
+  height: 70%;
+  width: 98%;
+}
+
+.pronouns-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+  justify-content: space-between;
+  height: 95%;
+  width: 85%;
+  overflow-y: scroll;
+  margin: auto;
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 5px;
+}
+
+.actions-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  justify-content: space-between;
+  height: 95%;
+  width: 90%;
+  overflow-y: scroll;
+  margin: auto;
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 5px;
+}
+
+.pictograms {
+  display: grid;
+  grid-template-columns: 10% 1fr;
+  width: 98%;
+  height: 95%;
+  overflow-y: auto;
+  margin: auto;
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 5px;
+}
+
+.pictograms-grid{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: self-start;
+  justify-content: start;
+  width: 98%;
+  height: 95%;
+  overflow-y: auto;
+}
+
+.categories {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: start;
+  width: 98%;
+  height: 95%;
+  overflow-y: auto;
+  margin: auto;
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 5px;
+}
+
+.categories-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  margin: 10px;
+  padding: 10px;
+  background-color: #FF637D;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
+  width: 13%;
+  border: none;
+  font-family: 'Satisfy', cursive;
+}
+
+.categories-button:hover {
+  background-color: #66D7D1;
+  transform: scale(1.05);
+}
+
+.personalizados-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  margin: 10px;
+  padding: 10px;
+  background-color: #03756f;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
+  width: 13%;
+  border: none;
+  font-family: 'Satisfy', cursive;
+}
+
+.personalizados-button:hover {
+  background-color: #ef2144;
+  transform: scale(1.05);
+}
+
+.categories span {
+  margin: 5px;
+  color: #fff;
+  font-size: 2vh;
+  font-weight: bold;
+}
+
+.category-icon {
+  width: 10vh;
+  height: 10vh;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+  border: 1px solid #bbb;
+  border-radius: 5px;
+  text-align: center;
+  padding: 10px 5px;
+  margin: 7px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  height: fit-content;
+  width: fit-content;
+}
+
+.card:hover {
+  background-color: #f0f0f0;
+  transform: scale(1.05);
+}
+
+.card p {
+  margin: 5px 0 0 0;
+  color: #000;
+  font-size: 2vh;
+}
+
+.icon {
+  color: #000;
+}
+
+.pronouns-img {
+  background-color: yellow;
+  width: 10vh;
+  height: 10vh;
+  border: none;
+  margin: 3px;
+}
+
+.actions-img {
+  background-color: green;
+  width: 10vh;
+  height: 10vh;
+  border: none;
+  margin: 3px;
+}
+
+.default-img {
+  background-color: burlywood;
+  width: 10vh;
+  height: 10vh;
+  border: none;
+  margin: 3px;
+}

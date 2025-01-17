@@ -1,0 +1,39 @@
+.images {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1vw;
+    width: 100%;
+    height: fit-content;
+    margin: 1vh auto;
+}
+
+.images img {
+    width: 12vh;
+    height: 12vh;
+    border: 1.5px solid #000000;
+    border-radius: 5px;
+    background-color: coral;
+    cursor: pointer;
+}
+
+.images img:hover {
+    scale: 1.1;
+}
+
+.options-btn button {
+    padding: 10px 20px;
+    color: #fff;
+    background-color: #FF637D;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    text-align: center;
+    transition: background-color 0.3s;
+}
+
+.options-btn button:hover {
+    background-color: #66D7D1;
+}
