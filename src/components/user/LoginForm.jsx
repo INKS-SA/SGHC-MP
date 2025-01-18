@@ -19,6 +19,7 @@ export const LoginForm = ({ login }) => {
     try {
       await login({ username, password });
       toast.success("Ingreso exitoso.", { position: "top-right", autoClose: 3000 });
+      navigate("/");
     } catch (error) {
       console.error("Error al ingresar:", error);
       toast.error("Credenciales incorrectas. Inténtalo de nuevo.", { position: "top-right", autoClose: 3000 });
