@@ -22,7 +22,6 @@ export const LoginForm = ({ login }) => {
     } catch (error) {
       console.error("Error al ingresar:", error);
       toast.error("Credenciales incorrectas. Inténtalo de nuevo.", { position: "top-right", autoClose: 3000 });
-      navigate("/");
     }
   };
 
