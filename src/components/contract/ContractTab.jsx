@@ -32,7 +32,7 @@ const ContractTab = ({ treatmentPlan }) => {
 
   const handleFileUpload = async (event) => {
     const file = event.target.files[0];
-    console.log("Archivo seleccionado:", file);
+    toast.success("Archivo seleccionado:", file);
     if (file) {
       if (contract) {
         // Actualizar contrato existente
