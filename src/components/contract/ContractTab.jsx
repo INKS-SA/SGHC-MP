@@ -28,12 +28,12 @@ const ContractTab = ({ treatmentPlan }) => {
   const loadContract = async () => {
     const data = await getContractByTreatment(treatmentPlan._id);
     setContract(data);
-    console.log('Contract:', data);
+    toast.success('Contrato cargado exitosamente', data);
   };
 
   const handleFileUpload = async (event) => {
     const file = event.target.files[0];
-    toast.success("Archivo seleccionado:", file);
+    toast.success("Archivo seleccionado:", file.name);
     if (file) {
       if (contract) {
         // Actualizar contrato existente
