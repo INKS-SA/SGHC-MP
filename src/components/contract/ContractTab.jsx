@@ -28,6 +28,7 @@ const ContractTab = ({ treatmentPlan }) => {
   const loadContract = async () => {
     const data = await getContractByTreatment(treatmentPlan._id);
     setContract(data);
+    console.log('Contract:', data);
   };
 
   const handleFileUpload = async (event) => {
@@ -44,6 +45,7 @@ const ContractTab = ({ treatmentPlan }) => {
       } else {
         // Crear nuevo contrato
         const result = await uploadContract(treatmentPlan._id, file);
+        console.log('file:', file);
         if (result.success) {
           toast.success('Contrato cargado exitosamente');
           loadContract();
