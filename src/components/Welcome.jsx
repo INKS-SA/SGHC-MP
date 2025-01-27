@@ -156,7 +156,7 @@ function Welcome({ user, logout }) {
 
           <Grid container spacing={3}>
             {menuItems.map((item, index) => (
-              (!item.adminOnly || user.username === "admin") && (
+              (!item.adminOnly || user.role === "admin") && (
                 <Grid item xs={12} key={index}>
                   <Paper 
                     elevation={3}
