@@ -24,19 +24,20 @@ const getContractByTreatment = async (treatmentId) => {
 };
 
 const updateContract = async (treatmentId, file) => {
-  console.log('Updating contract with file:', file);
-  const formData = new FormData();
-  formData.append('contractFile', file);
-  // Verifica el contenido del FormData
-  for (let pair of formData.entries()) {
-    console.log(pair[0], pair[1]);
+  try {
+    const formData = new FormData();
+    formData.append('contractFile', file);
+    
+    const response = await axios.put(`${baseUrl}/${treatmentId}`, formData, {
+      headers: {
+        'Content-Type': 'multipart/form-data'
+      }
+    });
+    return { success: true, data: response.data };
+  } catch (error) {
+    console.error('Error updating contract:', error);
+    return { success: false, error: error.message };
   }
-  const response = await axios.put(`${baseUrl}/${treatmentId}`, formData, {
-    headers: {
-      'Content-Type': 'multipart/form-data'
-    }
-  });
-  return response.data;
 };
 
 export default { uploadContract, getContractByTreatment, updateContract };
