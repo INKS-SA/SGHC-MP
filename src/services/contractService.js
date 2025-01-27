@@ -6,7 +6,11 @@ const baseUrl = "/api/contracts";
 const uploadContract = async (treatmentId, file) => {
   const formData = new FormData();
   formData.append('contractFile', file);
-  const response = await axios.post(`${baseUrl}/${treatmentId}`, formData);
+  const response = await axios.post(`${baseUrl}/${treatmentId}`, formData, {
+    headers: {
+      'Content-Type': 'multipart/form-data'
+    }
+  });
   return response.data;
 };
 
