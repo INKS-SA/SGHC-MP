@@ -24,10 +24,14 @@ const getContractByTreatment = async (treatmentId) => {
 };
 
 const updateContract = async (treatmentId, file) => {
-    const formData = new FormData();
-    formData.append('contractFile', file);
-    const response = await axios.put(`${baseUrl}/${treatmentId}`, formData);
-    return response.data;
-  };
+  const formData = new FormData();
+  formData.append('contractFile', file);
+  const response = await axios.put(`${baseUrl}/${treatmentId}`, formData, {
+    headers: {
+      'Content-Type': 'multipart/form-data'
+    }
+  });
+  return response.data;
+};
 
 export default { uploadContract, getContractByTreatment, updateContract };
