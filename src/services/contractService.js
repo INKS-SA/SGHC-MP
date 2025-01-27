@@ -24,8 +24,13 @@ const getContractByTreatment = async (treatmentId) => {
 };
 
 const updateContract = async (treatmentId, file) => {
+  console.log('Updating contract with file:', file);
   const formData = new FormData();
   formData.append('contractFile', file);
+  // Verifica el contenido del FormData
+  for (let pair of formData.entries()) {
+    console.log(pair[0], pair[1]);
+  }
   const response = await axios.put(`${baseUrl}/${treatmentId}`, formData, {
     headers: {
       'Content-Type': 'multipart/form-data'
