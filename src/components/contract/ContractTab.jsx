@@ -37,6 +37,7 @@ const ContractTab = ({ treatmentPlan }) => {
     if (file) {
       if (contract) {
         // Actualizar contrato existente
+        toast.success(file.name);
         const result = await updateContract(treatmentPlan._id, file);
         if (result.success) {
           toast.success('Contrato actualizado exitosamente');
@@ -44,7 +45,6 @@ const ContractTab = ({ treatmentPlan }) => {
         }
       } else {
         // Crear nuevo contrato
-        toast.success(file.name);
         const result = await uploadContract(treatmentPlan._id, file);
         console.log('file:', file);
         if (result.success) {
