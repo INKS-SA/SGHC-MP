@@ -226,7 +226,61 @@ const BudgetForm = ({
       fases: [...prevBudget.fases, { ...initialFaseState }]
     }));
   };
+// BudgetForm.jsx  (reemplaza tu handleSubmit)
+const handleSubmit = async (e) => {
+  e.preventDefault();
+  try {
+    const { fases, totalGeneral } = calculateTotals(budget.fases);
 
+    // Normalizar IDs
+    const treatmentPlanId =
+      (budget.treatmentPlan && typeof budget.treatmentPlan === 'object')
+        ? budget.treatmentPlan._id
+        : budget.treatmentPlan;
+
+    const payload = {
+      ...budget,
+      paciente: budget.paciente || selectedPatient?.id,
+      treatmentPlan: treatmentPlanId || undefined,
+      fases,
+      totalGeneral,
+    };
+
+    // 1) Si viene de planificación, verificar si ya existe
+    if (treatmentPlanId) {
+      try {
+        const existing = await fetchBudgetByTreatment(treatmentPlanId); // GET /api/budgets/treatment/:id
+        // Si existe → actualizar (PUT)
+        const result = await updateBudget(existing._id, payload);
+        if (result.success) {
+          toast.success('Presupuesto actualizado exitosamente');
+          navigate('/presupuestos');
+          return;
+        } else {
+          toast.error(result.error || 'Error al actualizar el presupuesto');
+          return;
+        }
+      } catch (err) {
+        // Si el GET devuelve 404, no existe; seguimos al POST
+      }
+    }
+
+    // 2) Crear si no existe
+    const created = await createBudget(payload);
+    if (created.success) {
+      toast.success('Presupuesto creado exitosamente');
+      navigate('/presupuestos');
+    } else {
+      toast.error(created.error || 'Error al crear el presupuesto');
+    }
+  } catch (error) {
+    console.error('Error submitting budget:', error);
+    toast.error(error.response?.data?.error || 'Error al guardar el presupuesto');
+  }
+};
+
+
+/*
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
@@ -265,7 +319,7 @@ const BudgetForm = ({
       }
     }
   };
-
+*/
   return (
     <div style={{ backgroundColor: '#f5f1ef', minHeight: '100vh', padding: '20px' }}>
       <Button
