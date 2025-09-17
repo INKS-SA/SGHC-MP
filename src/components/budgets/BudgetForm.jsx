@@ -12,6 +12,7 @@ import {
 } from '@mui/icons-material';
 import { toast } from 'react-toastify';
 import patientTreatmentService from '../../services/patientTreatmentService';
+import budgetService from '../../services/budgetService';
 
 const BudgetForm = ({ 
   createBudget, 
@@ -226,46 +227,53 @@ const BudgetForm = ({
       fases: [...prevBudget.fases, { ...initialFaseState }]
     }));
   };
-// BudgetForm.jsx  (reemplaza tu handleSubmit)
+  
 const handleSubmit = async (e) => {
   e.preventDefault();
   try {
     const { fases, totalGeneral } = calculateTotals(budget.fases);
 
-    // Normalizar IDs
+    // Normaliza treatmentPlan a string ID
     const treatmentPlanId =
       (budget.treatmentPlan && typeof budget.treatmentPlan === 'object')
         ? budget.treatmentPlan._id
         : budget.treatmentPlan;
 
+    // Sanea: quita campos que no deben viajar al backend
+   const { _id, __v, createdAt, updatedAt, ...rest } = budget;
+
     const payload = {
-      ...budget,
+     ...budget,
+     ...rest,
       paciente: budget.paciente || selectedPatient?.id,
       treatmentPlan: treatmentPlanId || undefined,
       fases,
       totalGeneral,
     };
 
-    // 1) Si viene de planificación, verificar si ya existe
+    // Si viene de planificación: verificar si ya existe presupuesto
     if (treatmentPlanId) {
       try {
-        const existing = await fetchBudgetByTreatment(treatmentPlanId); // GET /api/budgets/treatment/:id
-        // Si existe → actualizar (PUT)
-        const result = await updateBudget(existing._id, payload);
-        if (result.success) {
-          toast.success('Presupuesto actualizado exitosamente');
-          navigate('/presupuestos');
-          return;
-        } else {
-          toast.error(result.error || 'Error al actualizar el presupuesto');
-          return;
-        }
+       // GET /api/budgets/treatment/:treatmentPlanId
+       const existing = await budgetService.getBudgetByTreatment(treatmentPlanId);
+
+       // Ya existe → actualizarlo (PUT /api/budgets/:id)
+       const result = await updateBudget(existing._id, payload);
+       if (result.success) {
+         toast.success('Presupuesto actualizado exitosamente');
+         navigate('/presupuestos');
+         return;
+       } else {
+         toast.error(result.error || 'Error al actualizar el presupuesto');
+         return;
+       }
+
       } catch (err) {
-        // Si el GET devuelve 404, no existe; seguimos al POST
+        // Si el GET devolvió 404, no existe; seguimos con POST
       }
     }
 
-    // 2) Crear si no existe
+    // No existe → crearlo (POST /api/budgets)
     const created = await createBudget(payload);
     if (created.success) {
       toast.success('Presupuesto creado exitosamente');
@@ -278,6 +286,7 @@ const handleSubmit = async (e) => {
     toast.error(error.response?.data?.error || 'Error al guardar el presupuesto');
   }
 };
+
 
 
 /*
